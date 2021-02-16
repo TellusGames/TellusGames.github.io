@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tellus Games | Landing</title>
+    <meta name="description" content="I guess there is something. Just very soon.">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+    <link rel="manifest" href="/site.webmanifest">
+  <style>
+  body {
+    background-color: rgb(26, 26, 26);
+  }
+  p {
+    color: floralwhite;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    margin-top: 0px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: floralwhite;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    margin-top: 350px;
+  }
+
+  a {
+    font-size: 35px;
+    font-weight: 500;
+  }
+  </style>
+  </head>
+  <body>
+    <h1>There is still some time left... is it?</h1>
+    <p id="countdown">Loading Timestamp...</p>
+
+    <script>
+      var countDownDate = new Date("April 1, 2021 00:00:00").getTime();
+
+      var x = setInterval(function() {
+
+      var now = new Date().getTime();
+    
+      var distance = countDownDate - now;
+    
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Server released!";
+      }
+      }, 1000);
+    </script>
+  </body>
+  <footer>
+    <h4>Copyright Tellus Games © 2021 All rights reserved.</h4>
+    <p>
+      <a href="https://discord.lol/tellus" style="color:#3BB9FF;">Discord</a> | <a href="#" style="color:#3BB9FF;">App Store</a> | <a href="https://twitter.com/TellusGame" style="color:#3BB9FF;">Twitter</a>
+    </p>
+  </footer>
+</html>
